@@ -1,4 +1,4 @@
-#Inngest-Powered RAG API
+# Inngest-Powered RAG API
 
 A high-performance, asynchronous Retrieval-Augmented Generation (RAG) system. This project processes PDF documents, chunks them for semantic search, and provides accurate, context-aware answers using OpenAI’s LLM, all managed by an event-driven background job system.
 
@@ -35,13 +35,13 @@ OPENAI_API_KEY=sk-your-key-here
 
 ### 3. Installation
 You can use uv (recommended) or standard pip:
-# Clone the repository
+## Clone the repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/smatpie/rag-api-project
 cd rag-api-project
 ```
 
-# Install dependencies
+## Install dependencies
 ```bash
 uv sync
 ```
