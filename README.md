@@ -36,25 +36,33 @@ OPENAI_API_KEY=sk-your-key-here
 ### 3. Installation
 You can use uv (recommended) or standard pip:
 # Clone the repository
+```bash
 git clone <your-repo-url>
 cd rag-api-project
+```
 
 # Install dependencies
+```bash
 uv sync
-# OR if not using uv:
-pip install -r requirements.txt
+```
 
 ### 4. Running the Application
 Open three terminal windows to run the stack:
 
 Terminal 1 (Inngest):
-npx inngest-cli@latest dev
+```bash
+npx inngest-cli@latest dev -u http://127.0.0.1/api/ingest --no-discovery
+```
 
 Terminal 2 (Backend API):
-uvicorn main:app --reload
+```bash
+uv run uvicorn main:app --reload
+```
 
 Terminal 3 (Frontend):
-streamlit run streamlit_app.py
+```bash
+uv run streamlit run streamlit_app.py
+```
 
 ## Lessons Learned (The "Gotchas")
 * Async/Await Traps: Learned to avoid asyncio.run() in Streamlit due to event loop closures; switched to managing clients without @st.cache_resource when they require persistent connections to active event loops.
